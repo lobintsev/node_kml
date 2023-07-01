@@ -5,6 +5,7 @@ const { parse } = require('fast-xml-parser');
 const togeojson = require('@mapbox/togeojson');
 const turf = require('@turf/turf');
 const jsdom = require('jsdom'); // Import jsdom
+const http = require('http');
 
 const { JSDOM } = jsdom; // Destructure JSDOM from jsdom
 
@@ -39,6 +40,6 @@ app.get('/polygon', async (req, res) => {
   }
 });
 
-app.listen(4000, () => {
+app.listen(process.env.PORT, () => {
   console.log('Server is running on port 4000');
 });
