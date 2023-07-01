@@ -34,7 +34,7 @@ app.get('/polygon', async (req, res) => {
         });
       }
     }
-    res.json({ message: "Point not found in any polygon" });
+    res.status(404).json({ message: "Point not found in any polygon" });
   } catch (error) {
     res.status(500).json({ error: error.toString() });
   }
